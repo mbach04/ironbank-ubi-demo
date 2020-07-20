@@ -5,8 +5,8 @@ EXPOSE 8080
 ENV APP_ROOT=/opt/app-root
 
 RUN rm -rf /etc/yum.repos.d/ironbank.repo && \
-  curl https://raw.githubusercontent.com/mbach04/ocp_remediation_demo/master/ubi.repo -o /etc/yum.repos.d/ubi.repo && \
-  curl https://raw.githubusercontent.com/mbach04/ocp_remediation_demo/master/redhat.repo -o /etc/yum.repos.d/redhat.repo && \
+  curl https://raw.githubusercontent.com/mbach04/ironbank-ubi-demo/master/ubi.repo -o /etc/yum.repos.d/ubi.repo && \
+  curl https://raw.githubusercontent.com/mbach04/ironbank-ubi-demo/master/redhat.repo -o /etc/yum.repos.d/redhat.repo && \
   sed -i "/localpkg/s/^/#/" /etc/yum.conf && \
   sed -i "/repo_gpgcheck/s/^/#/" /etc/yum.conf 
 RUN INSTALL_PKGS="gcc-c++ \
